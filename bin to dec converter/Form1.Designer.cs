@@ -112,7 +112,7 @@ namespace bin_to_dec_converter
             // 
             // textBoxOutPut
             // 
-            this.textBoxOutPut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.textBoxOutPut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxOutPut.Location = new System.Drawing.Point(13, 68);
             this.textBoxOutPut.Multiline = true;
             this.textBoxOutPut.Name = "textBoxOutPut";
@@ -147,13 +147,7 @@ namespace bin_to_dec_converter
             this.comboBoxY.FormattingEnabled = true;
             this.comboBoxY.Items.AddRange(new object[] {
             "8",
-            "7",
-            "6",
-            "5",
-            "4",
-            "3",
-            "2",
-            "1"});
+            "6"});
             this.comboBoxY.Location = new System.Drawing.Point(239, 19);
             this.comboBoxY.Name = "comboBoxY";
             this.comboBoxY.Size = new System.Drawing.Size(50, 41);
@@ -167,13 +161,8 @@ namespace bin_to_dec_converter
             this.comboBoxX.FormattingEnabled = true;
             this.comboBoxX.Items.AddRange(new object[] {
             "8",
-            "7",
             "6",
-            "5",
-            "4",
-            "3",
-            "2",
-            "1"});
+            "4"});
             this.comboBoxX.Location = new System.Drawing.Point(142, 19);
             this.comboBoxX.Name = "comboBoxX";
             this.comboBoxX.Size = new System.Drawing.Size(50, 41);

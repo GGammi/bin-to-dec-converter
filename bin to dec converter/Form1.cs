@@ -48,7 +48,12 @@ namespace bin_to_dec_converter
                 for (int x = 0; x < 8; x++)
                 {
                     myButtonsMas[x, y].Tag = 0;
-                    textBoxOutPut.Text = "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,";
+                    if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 8)
+                        textBoxOutPut.Text = "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,";
+                    else if (Convert.ToInt32(comboBoxY.Text) == 6 && Convert.ToInt32(comboBoxX.Text) == 4)
+                        textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
+                    else if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 6)
+                        textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
 
                     if (y <= 7 - Convert.ToInt32(comboBoxY.Text) || x <= 7 - Convert.ToInt32(comboBoxX.Text))
                     {
@@ -73,8 +78,19 @@ namespace bin_to_dec_converter
                 {
                     strTime += myButtonsMas[x, y].Tag;
                 }
-                strTime = String.Format("{0:X2}", Convert.ToUInt64(strTime, 2));
-                str += "0x" + strTime + ", ";
+                if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 8)
+                {
+                    strTime = String.Format("{0:X2}", Convert.ToUInt64(strTime, 2));
+                    str += "0x" + strTime + ", ";
+                }
+                else if (Convert.ToInt32(comboBoxY.Text) == 6 && Convert.ToInt32(comboBoxX.Text) == 4 && y < 6)
+                {
+                    str += "0b" + strTime + ", ";
+                }
+                else if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 6)
+                {
+                    str += "0b" + strTime + ", ";
+                }
                 strTime = "";
             }
             textBoxOutPut.Text = str;
@@ -86,6 +102,13 @@ namespace bin_to_dec_converter
             {
                 for (int x = 0; x < 8; x++)
                 {
+                    if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 8)
+                        textBoxOutPut.Text = "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,";
+                    else if (Convert.ToInt32(comboBoxY.Text) == 6 && Convert.ToInt32(comboBoxX.Text) == 4)
+                        textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
+                    else if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 6)
+                        textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
+
                     if (y <= 7 - Convert.ToInt32(comboBoxY.Text) || x <= 7 - Convert.ToInt32(comboBoxX.Text)) // кнопка неактивна. 
                     {
                         myButtonsMas[x, y].Enabled = false;
