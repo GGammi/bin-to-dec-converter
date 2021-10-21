@@ -29,7 +29,6 @@ namespace bin_to_dec_converter
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxOutPut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -698,7 +697,7 @@ namespace bin_to_dec_converter
             // 
             // buttonСlear
             // 
-            this.buttonСlear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonСlear.BackgroundImage")));
+            this.buttonСlear.BackgroundImage = global::bin_to_dec_converter.Properties.Resources._1370026_bin_delete_remove_trash_trash_bin_icon__1_;
             this.buttonСlear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonСlear.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonСlear.Location = new System.Drawing.Point(406, 14);

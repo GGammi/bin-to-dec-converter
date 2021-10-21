@@ -59,5 +59,15 @@ namespace bin_to_dec_converter.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1370026_bin_delete_remove_trash_trash_bin_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("1370026_bin_delete_remove_trash_trash bin_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
