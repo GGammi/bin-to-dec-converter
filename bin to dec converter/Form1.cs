@@ -106,6 +106,8 @@ namespace bin_to_dec_converter
             {
                 for (int x = 0; x < 8; x++)
                 {
+                    myButtonsMas[x, y].Tag = 0;
+
                     if (comboBox.Text == "8x8")
                         textBoxOutPut.Text = "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,";
                     else if (comboBox.Text == "4x6")
