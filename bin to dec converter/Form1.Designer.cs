@@ -33,7 +33,6 @@ namespace bin_to_dec_converter
             this.textBoxOutPut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
-            this.labelX = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -123,7 +122,7 @@ namespace bin_to_dec_converter
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 32);
             this.label1.TabIndex = 67;
@@ -137,22 +136,12 @@ namespace bin_to_dec_converter
             "8x8",
             "6x8",
             "4x6"});
-            this.comboBox.Location = new System.Drawing.Point(142, 19);
+            this.comboBox.Location = new System.Drawing.Point(104, 19);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(71, 41);
             this.comboBox.TabIndex = 73;
             this.comboBox.Text = "8x8";
             this.comboBox.TextChanged += new System.EventHandler(this.updatingTheFieldSize);
-            // 
-            // labelX
-            // 
-            this.labelX.AutoSize = true;
-            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelX.Location = new System.Drawing.Point(102, 27);
-            this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(34, 33);
-            this.labelX.TabIndex = 72;
-            this.labelX.Text = "X";
             // 
             // button2
             // 
@@ -740,7 +729,6 @@ namespace bin_to_dec_converter
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox);
-            this.Controls.Add(this.labelX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxOutPut);
             this.Controls.Add(this.button1);
@@ -756,7 +744,6 @@ namespace bin_to_dec_converter
         private System.Windows.Forms.TextBox textBoxOutPut;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox;
-        private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
