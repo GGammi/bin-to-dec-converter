@@ -85,7 +85,7 @@ namespace bin_to_dec_converter
                     strTime = String.Format("{0:X2}", Convert.ToUInt64(strTime, 2));
                     str += "0x" + strTime + ", ";
                 }
-                else if (comboBox.Text == "4x6" && y < 6)
+                else if (comboBox.Text == "4x6" && y > 1)
                 {
                     str += "0b" + strTime + ", ";
                 }
