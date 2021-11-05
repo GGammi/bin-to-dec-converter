@@ -24,7 +24,7 @@ namespace bin_to_dec_converter
             {
                 myButtons.Add(btn);
 
-                if (btn.Name != "buttonСlear") // проверяем, что это не кнопка buttonOk
+                if (btn.Name != "buttonСlear") // проверяем, что это не кнопка buttonСlear
                 {
                     btn.Click += button_Click; //приводим к типу и устанавливаем обработчик события
                     btn.BackColor = ColorTranslator.FromHtml("#fafafa"); // цвет фона белый
@@ -43,19 +43,21 @@ namespace bin_to_dec_converter
 
         private void buttonClear_Click(object sender, EventArgs e) // кнопка очистки поля
         {
+            string[] str = comboBox.Text.Split('x');
+
             for (int y = 0; y < 8; y++)
             {
                 for (int x = 0; x < 8; x++)
                 {
                     myButtonsMas[x, y].Tag = 0;
-                    if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 8)
+                    if (comboBox.Text == "8x8")
                         textBoxOutPut.Text = "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,";
-                    else if (Convert.ToInt32(comboBoxY.Text) == 6 && Convert.ToInt32(comboBoxX.Text) == 4)
+                    else if (comboBox.Text == "4x6")
                         textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
-                    else if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 6)
+                    else if (comboBox.Text == "6x8")
                         textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
 
-                    if (y <= 7 - Convert.ToInt32(comboBoxY.Text) || x <= 7 - Convert.ToInt32(comboBoxX.Text))
+                    if (y <= 7 - Convert.ToInt32(str[1]) || x <= 7 - Convert.ToInt32(str[0]))
                     {
                         myButtonsMas[x, y].BackColor = ColorTranslator.FromHtml("#f3f3f3"); // цвет фона серый
                     }
@@ -78,16 +80,16 @@ namespace bin_to_dec_converter
                 {
                     strTime += myButtonsMas[x, y].Tag;
                 }
-                if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 8)
+                if (comboBox.Text == "8x8")
                 {
                     strTime = String.Format("{0:X2}", Convert.ToUInt64(strTime, 2));
                     str += "0x" + strTime + ", ";
                 }
-                else if (Convert.ToInt32(comboBoxY.Text) == 6 && Convert.ToInt32(comboBoxX.Text) == 4 && y < 6)
+                else if (comboBox.Text == "4x6" && y < 6)
                 {
                     str += "0b" + strTime + ", ";
                 }
-                else if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 6)
+                else if (comboBox.Text == "6x8")
                 {
                     str += "0b" + strTime + ", ";
                 }
@@ -98,18 +100,20 @@ namespace bin_to_dec_converter
 
         private void updatingTheFieldSize(object sender, EventArgs e) // обновить размер поля
         {
+            string[] str = comboBox.Text.Split('x');
+
             for (int y = 0; y < 8; y++)
             {
                 for (int x = 0; x < 8; x++)
                 {
-                    if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 8)
+                    if (comboBox.Text == "8x8")
                         textBoxOutPut.Text = "0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,";
-                    else if (Convert.ToInt32(comboBoxY.Text) == 6 && Convert.ToInt32(comboBoxX.Text) == 4)
+                    else if (comboBox.Text == "4x6")
                         textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
-                    else if (Convert.ToInt32(comboBoxY.Text) == 8 && Convert.ToInt32(comboBoxX.Text) == 6)
+                    else if (comboBox.Text == "6x8")
                         textBoxOutPut.Text = "0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000,";
 
-                    if (y <= 7 - Convert.ToInt32(comboBoxY.Text) || x <= 7 - Convert.ToInt32(comboBoxX.Text)) // кнопка неактивна. 
+                    if (y <= 7 - Convert.ToInt32(str[1]) || x <= 7 - Convert.ToInt32(str[0])) // кнопка неактивна. 
                     {
                         myButtonsMas[x, y].Enabled = false;
                         myButtonsMas[x, y].BackColor = ColorTranslator.FromHtml("#f3f3f3"); // цвет фона серый

@@ -32,9 +32,7 @@ namespace bin_to_dec_converter
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxOutPut = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelY = new System.Windows.Forms.Label();
-            this.comboBoxY = new System.Windows.Forms.ComboBox();
-            this.comboBoxX = new System.Windows.Forms.ComboBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.labelX = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -131,44 +129,20 @@ namespace bin_to_dec_converter
             this.label1.TabIndex = 67;
             this.label1.Text = "Размер";
             // 
-            // labelY
+            // comboBox
             // 
-            this.labelY.AutoSize = true;
-            this.labelY.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelY.Location = new System.Drawing.Point(198, 27);
-            this.labelY.Name = "labelY";
-            this.labelY.Size = new System.Drawing.Size(35, 33);
-            this.labelY.TabIndex = 69;
-            this.labelY.Text = "Y";
-            // 
-            // comboBoxY
-            // 
-            this.comboBoxY.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxY.FormattingEnabled = true;
-            this.comboBoxY.Items.AddRange(new object[] {
-            "8",
-            "6"});
-            this.comboBoxY.Location = new System.Drawing.Point(239, 19);
-            this.comboBoxY.Name = "comboBoxY";
-            this.comboBoxY.Size = new System.Drawing.Size(50, 41);
-            this.comboBoxY.TabIndex = 71;
-            this.comboBoxY.Text = "8";
-            this.comboBoxY.TextChanged += new System.EventHandler(this.updatingTheFieldSize);
-            // 
-            // comboBoxX
-            // 
-            this.comboBoxX.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxX.FormattingEnabled = true;
-            this.comboBoxX.Items.AddRange(new object[] {
-            "8",
-            "6",
-            "4"});
-            this.comboBoxX.Location = new System.Drawing.Point(142, 19);
-            this.comboBoxX.Name = "comboBoxX";
-            this.comboBoxX.Size = new System.Drawing.Size(50, 41);
-            this.comboBoxX.TabIndex = 73;
-            this.comboBoxX.Text = "8";
-            this.comboBoxX.TextChanged += new System.EventHandler(this.updatingTheFieldSize);
+            this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "8x8",
+            "6x8",
+            "4x6"});
+            this.comboBox.Location = new System.Drawing.Point(142, 19);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(71, 41);
+            this.comboBox.TabIndex = 73;
+            this.comboBox.Text = "8x8";
+            this.comboBox.TextChanged += new System.EventHandler(this.updatingTheFieldSize);
             // 
             // labelX
             // 
@@ -765,15 +739,12 @@ namespace bin_to_dec_converter
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBoxX);
+            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.labelX);
-            this.Controls.Add(this.comboBoxY);
-            this.Controls.Add(this.labelY);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxOutPut);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,9 +755,7 @@ namespace bin_to_dec_converter
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxOutPut;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelY;
-        private System.Windows.Forms.ComboBox comboBoxY;
-        private System.Windows.Forms.ComboBox comboBoxX;
+        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
